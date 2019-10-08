@@ -3,6 +3,8 @@
   "XRBIT.SetServoBot|block": "设置舵机机器人|动作为 %direction",
   "XRBIT.SetServoBotSubstep|block": "设置舵机机器人|分步动作 %direction",
   
+  "XRBIT.PlayThePiano|block":"弹奏钢琴|键值 %key |音调(格式：000) %tone",
+
   "XRBIT.MovementGroups.goforward|block": "前进",
   "XRBIT.MovementGroups.goback|block": "后退",
   "XRBIT.MovementGroups.turnleft|block": "左转",

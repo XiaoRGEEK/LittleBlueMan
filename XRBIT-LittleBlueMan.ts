@@ -94,6 +94,120 @@ namespace XRBIT {
      * @param index
      */
     
+    function LowToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 131
+        else if(tone == "001")
+            return 147
+        else if(tone == "002")
+            return 165
+        else if(tone == "003")
+            return 175
+        else if(tone == "004")
+            return 196
+        else if(tone == "005")
+            return 220
+        else if(tone == "006")
+            return 247
+        return 0
+    }
+
+    function MidToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 262
+        else if(tone == "001")
+            return 294
+        else if(tone == "002")
+            return 330
+        else if(tone == "003")
+            return 349
+        else if(tone == "004")
+            return 392
+        else if(tone == "005")
+            return 440
+        else if(tone == "006")
+            return 494
+        return 0
+    }
+
+    function HighToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 523
+        else if(tone == "001")
+            return 587
+        else if(tone == "002")
+            return 659
+        else if(tone == "003")
+            return 698
+        else if(tone == "004")
+            return 784
+        else if(tone == "005")
+            return 880
+        else if(tone == "006")
+            return 988
+        return 0
+    }
+    // 黑键
+    function BlackLowToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 139
+        else if(tone == "001")
+            return 156
+        else if(tone == "002")
+            return 185
+        else if(tone == "003")
+            return 208
+        else if(tone == "004")
+            return 233
+        return 0
+    }
+    function BlackMidToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 277
+        else if(tone == "001")
+            return 311
+        else if(tone == "002")
+            return 370
+        else if(tone == "003")
+            return 415
+        else if(tone == "004")
+            return 466
+        return 0
+    }
+    function BlackHighToneTrans( tone:string ):number{
+        if(tone == "000")
+            return 554
+        else if(tone == "001")
+            return 622
+        else if(tone == "002")
+            return 740
+        else if(tone == "003")
+            return 831
+        else if(tone == "004")
+            return 932
+        return 0
+    }
+
+    //% blockId=XRBIT_PlayThePiano block="key| %key tone(Format:000)| %tone"
+    //% weight=94
+    //% blockGap=10
+    //% color="#0fbc11"
+    export function PlayThePiano(key: string, tone: string): void {   
+        if(key == "1")
+            music.playTone(LowToneTrans(tone),music.beat(BeatFraction.Whole))
+        if(key == "2")
+            music.playTone(MidToneTrans(tone),music.beat(BeatFraction.Whole))
+        if(key == "3")
+            music.playTone(HighToneTrans(tone),music.beat(BeatFraction.Whole))
+        if(key == "4")
+            music.playTone(BlackLowToneTrans(tone),music.beat(BeatFraction.Whole))
+        if(key == "5")
+            music.playTone(BlackMidToneTrans(tone),music.beat(BeatFraction.Whole))
+        if(key == "6")
+            music.playTone(BlackHighToneTrans(tone),music.beat(BeatFraction.Whole))
+    }
+    
+    
     //% blockId=XRBIT_SetServoAngle block="SetServoAngle|Num %Num|Angle %Angle"
     //% weight=94
     //% blockGap=10
