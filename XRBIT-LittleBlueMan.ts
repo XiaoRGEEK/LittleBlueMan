@@ -293,7 +293,8 @@ namespace XRBIT {
         reg[0] = 0x16;
         pins.i2cWriteBuffer(XRBIT_ADDRESS, reg);
         IRreaddat = pins.i2cReadNumber(XRBIT_ADDRESS, NumberFormat.UInt8BE);
-        for (var i = 0; i < 5000; i++);
+        let i = 0;
+        for (i = 0; i < 5000; i++) { }
         if (IRreaddat == IRValue) {
             irread = true;
         }
